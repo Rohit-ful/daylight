@@ -1,0 +1,9 @@
+{
+  "name": "DayLight",
+  "short_name": "DayLight",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f4f5f1",
+  "theme_color": "#2f6b55"
+}
