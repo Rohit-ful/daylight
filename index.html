@@ -5,8 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>DayLight</title>
     <link rel="manifest" href="./manifest.webmanifest" />
-    <script type="module" crossorigin src="./assets/index-NxPJTTDf.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-B-AzcGFx.css">
+    <script>
+      // Pick light or dark before the page draws; src/theme.ts keeps it up to date after that.
+      let pickedTheme = null;
+      try {
+        pickedTheme = localStorage.getItem("daylight-theme");
+      } catch {}
+      document.documentElement.dataset.theme =
+        pickedTheme === "light" || pickedTheme === "dark"
+          ? pickedTheme
+          : matchMedia("(prefers-color-scheme: dark)").matches
+            ? "dark"
+            : "light";
+    </script>
+    <script type="module" crossorigin src="./assets/index-DKIYfHdl.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-Cbt_7Ybk.css">
   </head>
   <body>
     <main id="app" class="app">
